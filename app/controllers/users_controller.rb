@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     if
-    params[:name].nil? or params[:name].empty?
+    params[:user][:name].nil? or params[:user][:name].empty?
     redirect_to '/new'
   else
     session[:name] = params[:name]
