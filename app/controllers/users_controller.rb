@@ -6,10 +6,10 @@ class UsersController < ApplicationController
 
   def create
     if
-    params[:user][:name].nil? or params[:user][:name].empty?
+    params[:user][:password].nil? or params[:user][:password].empty?
     redirect_to '/new'
   else
-    session[:user][:name] = params[:user][:name]
+    session[:user][:password] = params[:user][:password]
     redirect_to '/home'
   end
   end
