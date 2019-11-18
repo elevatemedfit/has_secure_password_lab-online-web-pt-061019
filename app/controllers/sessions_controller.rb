@@ -6,4 +6,8 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     redirect_to '/login'
   end
+
+  def sessions_params
+    params.require(:user).permit(:name, :password, :password_confirmation)
+  end
 end
