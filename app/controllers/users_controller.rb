@@ -6,12 +6,12 @@ class UsersController < ApplicationController
 
   def create
     if
-      params[:user][:password] = params[:user][:password_confirmation]
+      params[:user][:password] != params[:user][:password_confirmation]
+      redirect_to '/users/new'
+    else
       User.new(user_params).save
       session[:user_id] = User.last.id
       redirect_to '/'
-    else
-      redirect_to '/users/new'
     end
   end
 
