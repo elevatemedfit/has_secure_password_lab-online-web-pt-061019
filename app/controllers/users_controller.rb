@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     params[:user][:name].nil? or params[:user][:name].empty?
     redirect_to '/new'
   else
-    session[:name] = params[:name]
+    session[:user][:name] = params[:user][:name]
     redirect_to '/home'
   end
   end
